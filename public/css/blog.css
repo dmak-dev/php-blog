@@ -1,0 +1,357 @@
+/* Оформление блога: палитра и приёмы взяты из проекта «Календарь событий». */
+:root {
+    --bg: #c0f0c0;
+    --card: #ffffff;
+    --text: #000000;
+    --muted: #444444;
+    --line: #e5e7eb;
+    --accent: #007bff;
+    --accent-dark: #0063cc;
+    --accent-text: #ffffff;
+    --danger: #d9534f;
+    --success-bg: #e7f6e7;
+    --success-line: #4b9b4b;
+    --success-text: #1d5c1d;
+    --error: #a12b26;
+    --error-bg: #ffe3e3;
+    --field-bg: #ffffff;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .08);
+}
+
+:root[data-theme="dark"] {
+    --bg: #16211b;
+    --card: #1f2d25;
+    --text: #e8f1e9;
+    --muted: #a9bdae;
+    --line: #33453a;
+    --accent: #57a8ff;
+    --accent-dark: #3f8ee0;
+    --accent-text: #10202b;
+    --danger: #e0706a;
+    --success-bg: #1e3627;
+    --success-line: #4f9b62;
+    --success-text: #bfe6c8;
+    --error: #ffb4ae;
+    --error-bg: #3a2320;
+    --field-bg: #16211b;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+h2 {
+    margin: 0 0 16px;
+    font-size: 22px;
+}
+
+a {
+    color: var(--accent);
+}
+
+.header-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-row h1 {
+    margin: 0;
+    text-align: left;
+    font-size: 24px;
+}
+
+.header-row h1 a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    align-items: center;
+    margin: 12px 0 20px;
+}
+
+.site-nav a {
+    text-decoration: none;
+}
+
+.site-nav a:hover {
+    text-decoration: underline;
+}
+
+.inline-form {
+    display: inline;
+}
+
+.link-button {
+    padding: 0;
+    font: inherit;
+    color: var(--accent);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.link-button:hover {
+    text-decoration: underline;
+}
+
+.theme-toggle {
+    padding: 6px 12px;
+    font-size: 13px;
+    color: var(--accent);
+    background: var(--card);
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.alert-success {
+    background: var(--success-bg);
+    border: 1px solid var(--success-line);
+    color: var(--success-text);
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+}
+
+.post-card {
+    background: var(--card);
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+    padding: 14px 16px;
+    margin-bottom: 12px;
+}
+
+.post-card h3 {
+    margin: 0 0 6px;
+    font-size: 18px;
+}
+
+.post-card h3 a {
+    text-decoration: none;
+}
+
+.post-card h3 a:hover {
+    text-decoration: underline;
+}
+
+.post-meta {
+    margin: 0 0 8px;
+    color: var(--accent);
+    font-size: 14px;
+}
+
+.post-excerpt,
+.post-content {
+    margin: 6px 0 0;
+    color: var(--muted);
+}
+
+.post-content {
+    white-space: pre-wrap;
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.empty {
+    text-align: center;
+    color: var(--muted);
+    margin-top: 12px;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin: 16px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    font-size: 14px;
+    color: var(--accent-text);
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+}
+
+.btn-danger {
+    background: var(--danger);
+    border-color: var(--danger);
+}
+
+.btn-link {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.form-card {
+    background: var(--card);
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+    padding: 16px;
+}
+
+.form-field {
+    margin-bottom: 14px;
+}
+
+.form-field label {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 8px 10px;
+    font: inherit;
+    color: var(--text);
+    background: var(--field-bg);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+}
+
+.form-field textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.form-error {
+    margin: 6px 0 0;
+    color: var(--error);
+    font-size: 13px;
+}
+
+.check-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+.check-row input {
+    width: auto;
+}
+
+.pagination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    margin: 16px 0;
+}
+
+.page-link {
+    padding: 6px 14px;
+    font-size: 13px;
+    color: var(--accent);
+    background: var(--card);
+    border: 1px solid var(--accent);
+    border-radius: 999px;
+    text-decoration: none;
+}
+
+.page-link:hover {
+    background: var(--accent);
+    color: var(--accent-text);
+}
+
+.page-link.disabled {
+    color: var(--muted);
+    border-color: var(--line);
+}
+
+.page-info {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.table th,
+.table td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+}
+
+.table th {
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.site-footer {
+    margin-top: 32px;
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    body {
+        margin: 20px auto;
+    }
+
+    .header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .table th:nth-child(3),
+    .table td:nth-child(3) {
+        display: none;
+    }
+
+    .actions .btn {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+}
